@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/ico/pingponglogo.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+
+    <title>Ping Pong</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="matches.html">Matches</a></li>
+                <li><a href="tournaments.html">Tournaments</a></li>
+                <li class="header-title"><a href="index.html">Ping Pong</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <br>
+    </main>
+
+
+
+    <section id="home">
+        <div>
+            <header>
+                <h1>Ping Pong Matches</h1>
+                <input type="text" placeholder="Search matches..." />
+            </header>
+            <ul>
+                <li v-for="match in matches" :key="match.id">
+                {{ match.player1 }} vs {{ match.player2 }} - {{ match.status }}
+                </li>
+            </ul>
+            <button @click="createMatch">New Match</button>
+        </div>
+    </section>
+    <section id="match-details">
+        <div>
+            <h2>{{ match.player1 }} vs {{ match.player2 }}</h2>
+            <p>Current Score: {{ match.score }}</p>
+            <ul>
+                <li v-for="set in match.sets" :key="set.id">
+                Set {{ set.number }}: {{ set.player1Score }} - {{ set.player2Score }}
+                </li>
+            </ul>
+            <button @click="goBack">Back</button>
+        </div>
+    </section>
+    <section id="player-profile">
+        <div>
+            <h2>{{ player.name }}</h2>
+            <img :src="player.photo" alt="Player Photo" />
+            <p>Wins: {{ player.wins }} | Losses: {{ player.losses }}</p>
+            <ul>
+                <li v-for="match in player.recentMatches" :key="match.id">
+                {{ match.opponent }} - {{ match.result }}
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="scorekeeper">
+        <div class="scorekeeper">
+            <h2>Scorekeeper</h2>
+            <p>Server: {{ server.name }}</p>
+            <button @click="awardPoint(player1)">+1 for {{ player1.name }}</button>
+            <button @click="awardPoint(player2)">+1 for {{ player2.name }}</button>
+            <p>Score: {{ player1.score }} - {{ player2.score }}</p>
+        </div>
+    </section>
+    <section id="report">
+        <div class="reporting">
+            <h2>Match Report</h2>
+            <p>Winner: {{ winner.name }}</p>
+            <p>Final Score: {{ finalScore }}</p>
+            <ul>
+                <li>{{ player1.name }} Serving Win %: {{ player1.servingWinPercentage }}</li>
+                <li>{{ player2.name }} Serving Win %: {{ player2.servingWinPercentage }}</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
