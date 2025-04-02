@@ -2,7 +2,7 @@ body > header{
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: #afcbff;
+    background-color: var(--primary-color);
     border-radius: 0 0 10px 10px;
 }
 
