@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/matches.css">
 
     <title>Matches</title>
 </head>
@@ -25,15 +26,28 @@
         </nav>
     </header>
     <main>
-        <header>
-            <h1>Ping Pong Matches</h1>
-            <input type="text" placeholder="Search matches..." />
-        </header>
-        <ul>
-            <li v-for="match in matches" :key="match.id">
-            {{ match.player1 }} vs {{ match.player2 }} - {{ match.status }}
+        <div>
+            <h1>Matches</h1>
+            <button id="create-match">Create Match</button>
+        </div>
+
+        <ul id="listofplayers">
+            <li>
+                <h2>Player 1</h2>
+                <p>Elo: 500</p>
+            </li>
+            <li>
+                <h2>Player 2</h2>
+                <p>Elo: 480</p>
+            </li>
+            <li>
+                <h2>Player 3</h2>
+                <p>Elo: 520</p>
+            </li>
+            <li>
+                <h2>Player 4</h2>
+                <p>Elo: 460</p>
             </li>
         </ul>
-        <button @click="createMatch">New Match</button>
     </main>
 </body>

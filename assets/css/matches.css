@@ -1,0 +1,64 @@
+main > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+button#create-match {
+    width: 15rem;
+    height: 100%;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#create-match:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+ul#listofplayers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 3rem;
+}
+
+ul#listofplayers li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul#listofplayers li:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+ul#listofplayers li.active {
+    background-color: yellow;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul#listofplayers li h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+ul#listofplayers li p {
+    font-size: 1rem;
+    margin-bottom: .25rem;
+}
